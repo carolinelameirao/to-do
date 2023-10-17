@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Cadastrar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Cadastrar Tarefas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <form [formGroup]="tarefaFormGroup" #tarefaFormGroupDirective="ngForm" (ngSubmit)="criarTarefa(tarefaFormGroup.value)">
+      <ion-list lines="full" class="ion-no-margin ion-no-padding">
+        <ion-item>
+          <ion-input 
+            label="Tarefa" 
+            labelPlacement="stacked" 
+            type="text" 
+            clearInput="true" 
+            placeholder="digite a tarefa" 
+            formControlName="tarefa"
+            required
+            ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-select label="Categoria" formControlName="categoria">
+            <ion-select-option value="Urgente">Urgente</ion-select-option>
+            <ion-select-option value="Importante">Importante</ion-select-option>
+            <ion-select-option value="Prazo">Prazo</ion-select-option>
+            <ion-select-option value="Outro">Outro</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      <div class="ion-padding">
+        <ion-buttons>
+          <ion-button [disabled]="!tarefaFormGroup.valid" type="submit" expand="block">
+            Cadastrar
+            <ion-icon slot="end" name="add-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </div>
+    </form>
+  </ion-content>
+</ion-content>

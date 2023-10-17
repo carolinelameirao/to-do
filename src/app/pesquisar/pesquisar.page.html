@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Pesquisar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="pformGroup" #pformGroupDirective="ngForm" (ngSubmit)="pesquisar(pformGroup.value)">
+    <ion-item>
+      <ion-input formControlName="categoria" placeholder="Entre com a categoria" required></ion-input>
+      <ion-buttons>
+        <ion-button type="submit">
+          Buscar
+          <ion-icon slot="end" name="search-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </form>
+
+  <!--<ion-content>
+    <ion-grid class="ion-grid-padding">
+      <ion-row>
+        <ion-col>#</ion-col>
+        <ion-col>Tarefa</ion-col>
+        <ion-col>Categoria</ion-col>
+        <ion-col>Ações</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-item>
+          <ion-col></ion-col>
+        </ion-item>
+        <ion-item>
+          <ion-col></ion-col>
+        </ion-item>
+        <ion-item>
+          <ion-col></ion-col>
+        </ion-item>  
+      </ion-row>
+    </ion-grid>
+  </ion-content>-->
+
+</ion-content>
+
+
+
+
+
+
